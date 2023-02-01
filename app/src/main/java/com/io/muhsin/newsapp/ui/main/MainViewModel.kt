@@ -19,6 +19,7 @@ class MainViewModel @Inject constructor(private val repository: NewsRepository) 
         getNews("ru")
     }
     private fun getNews(countryCode:String)=
+
         viewModelScope.launch {
             newsLiveData.postValue(Resource.Loading())
             val response = repository.getNews(countryCode = countryCode, pageNumber = newsPage)

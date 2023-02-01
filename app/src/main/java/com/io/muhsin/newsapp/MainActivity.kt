@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_splash)
+        splash()
 
+    }
+
+    private fun splash() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(1500)
             _binding = ActivityMainBinding.inflate(layoutInflater)
