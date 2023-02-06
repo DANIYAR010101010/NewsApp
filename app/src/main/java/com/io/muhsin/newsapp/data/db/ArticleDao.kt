@@ -8,7 +8,7 @@ import com.io.muhsin.newsapp.models.Article
 interface ArticleDao {
 
     @Query("SELECT * FROM article")
-    suspend fun getAllArticles(): LiveData<List<Article>>
+    fun getAllArticles():List<Article>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(article: Article)
